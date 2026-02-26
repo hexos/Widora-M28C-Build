@@ -44,7 +44,7 @@ sed -i 's/luci-theme-argon/luci-theme-design/g' feeds/luci/collections/luci/Make
 
 # --- 修改默认 LAN IP 地址 ---
 # 将默认的 192.168.1.1 修改为 192.168.6.1 (防止光猫冲突)
-sed -i 's/192.168.1.1/192.168.6.1/g' package/base-files/files/bin/config_generate
+sed -i 's/192.168.1.1/192.168.8.1/g' package/base-files/files/bin/config_generate
 
 
 # =========================================================
@@ -63,13 +63,13 @@ uci set wireless.@wifi-device[0].disabled='0'
 uci set wireless.@wifi-device[1].disabled='0'
 
 # 2. 配置 5G Wi-Fi (通常是 iface[0]，如果反了就和下面对调)
-uci set wireless.@wifi-iface[0].ssid='Widora_5G'
-uci set wireless.@wifi-iface[0].key='password123'
+uci set wireless.@wifi-iface[0].ssid='M28C_5G'
+uci set wireless.@wifi-iface[0].key='password'
 uci set wireless.@wifi-iface[0].encryption='psk2'
 
 # 3. 配置 2.4G Wi-Fi
-uci set wireless.@wifi-iface[1].ssid='Widora_2.4G'
-uci set wireless.@wifi-iface[1].key='password123'
+uci set wireless.@wifi-iface[1].ssid='M28C_2.4G'
+uci set wireless.@wifi-iface[1].key='password'
 uci set wireless.@wifi-iface[1].encryption='psk2'
 
 # 4. 提交配置并应用
